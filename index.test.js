@@ -22,4 +22,13 @@ describe("Queue Class", () => {
     expect(queue.count).toBe(2);
     expect(queue.next).toBe("fox");
   });
+  it("#dequeue should remove an item from the front", () => {
+    const queue = new Queue();
+    queue.enqueue("fox");
+    queue.enqueue("goose");
+    const item = queue.dequeue();
+    expect(queue.count).toBe(1);
+    expect(queue.next).toBe("goose");
+    expect(item).toBe("fox");
+  });
 });
