@@ -11,16 +11,15 @@ describe("Stack Class", () => {
     stack.pop(1);
     expect(stack.peek()).toEqual(undefined);
   });
-  
-  it("#enqueue should add an element to the queue ", () => {
-    const queue = new Queue();
-    queue.enqueue(1);
-    expect(queue.dequeue()).toEqual(1);
-  });
-  it('#dequeue should remove an element to the queue ', () => {
-    const queue = new Queue();
-    queue.dequeue(1);
-    expect(queue.dequeue()).toEqual(undefined);
-  });
   // add more tests here...
+});
+
+describe("Queue Class", () => {
+  it("#enqueue should add an item to the back", () => {
+    const queue = new Queue();
+    queue.enqueue("fox");
+    queue.enqueue("goose");
+    expect(queue.count).toBe(2);
+    expect(queue.next).toBe("fox");
+  });
 });

@@ -17,22 +17,26 @@ class Stack {
 }
 
 class Queue {
+  #list;
+
+  constructor(list) {
+    this.#list = list || [];
+  }
   
-  constructor() {
-  this.element = {};
-  this.head = 0;
-  this.tail = 0;  
-}
-enqueue(element) {
-  this.element[this.tail] = element;
-  this.tail++;
-}
-dequeue() {
-  const item = this.element[this.head];
-  delete this.element[this.head];
-  this.head++;
-  return item;
-}
+  enqueue(item) {
+    this.#list.push(item);
+  }
+  
+  get count() {
+    return this.#list.length;
+  }
+  
+  get next() {
+    return this.#list[0];
+  }
+
+  
+
 }
 
 module.exports = { Stack, Queue };
