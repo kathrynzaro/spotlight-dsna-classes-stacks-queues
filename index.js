@@ -10,6 +10,10 @@ class Stack {
   peek() {
     return this.items[this.items.length - 1];
   }
+
+  pop(item) {
+    this.items.pop();
+  }
 }
 
 class Queue {}
